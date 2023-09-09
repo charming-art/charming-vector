@@ -3,8 +3,7 @@ import { staticize } from "./_staticize";
 
 function _norm(out, a) {
   const mag = a.mag();
-  // console.log(mag)
-  out.set(a).div(mag);
+  if (mag !== 0) out.set(a).div(mag);
 }
 
 export const vec$norm = memberize(_norm);

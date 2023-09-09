@@ -451,6 +451,13 @@ describe("norm", () => {
     expect(a.x).toBe(0.6);
     expect(a.y).toBe(0.8);
   });
+
+  test("vec.norm()", () => {
+    const a = cm.vec(0, 0);
+    a.norm();
+    expect(a.x).toBe(0);
+    expect(a.y).toBe(0);
+  });
 });
 
 describe("out", () => {
