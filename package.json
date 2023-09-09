@@ -1,7 +1,7 @@
 {
   "name": "@charming-art/vector",
   "version": "0.0.1",
-  "description": "The JavaScript library for manipulating Euclidean vector.",
+  "description": "The JavaScript library for manipulating geometric vector.",
   "main": "src/index.js",
   "scripts": {
     "test": "vitest"
