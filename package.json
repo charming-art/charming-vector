@@ -2,16 +2,22 @@
   "name": "@charming-art/vector",
   "version": "0.0.1",
   "description": "The JavaScript library for manipulating geometric vector.",
+  "author": {
+    "name": "pearmini",
+    "url": "https://github.com/pearmini"
+  },
+  "license": "ISC",
+  "type": "module",
   "main": "src/index.js",
+  "module": "src/index.js",
+  "files": [
+    "dist/**/*.js",
+    "src/**/*.js"
+  ],
   "scripts": {
     "test": "vitest"
   },
-  "keywords": [
-    "visitation",
-    "creative coding"
-  ],
-  "author": "pearmini",
-  "license": "ISC",
+  "sideEffects": false,
   "devDependencies": {
     "vitest": "^0.34.2"
   }
