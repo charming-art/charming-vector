@@ -349,6 +349,13 @@ describe("mag", () => {
     expect(a.x).toBe(6);
     expect(a.y).toBe(8);
   });
+
+  test("vec.norm()", () => {
+    const a = cm.vec(0, 0);
+    a.mag(10);
+    expect(a.x).toBe(0);
+    expect(a.y).toBe(0);
+  });
 });
 
 describe("maybe", () => {
