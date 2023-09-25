@@ -14,6 +14,7 @@ import { vec$maybe } from "./maybe.js";
 import { vec$out, vec$outX, vec$outY } from "./out.js";
 import { vec$neg, vec$negX, vec$negY } from "./neg.js";
 import { vec$inX, vec$inY } from "./in.js";
+import { vec$angle } from "./angle.js";
 
 export function Vec(x = 0, y = 0) {
   Object.defineProperties(this, {
@@ -50,6 +51,7 @@ Object.defineProperties(Vec.prototype, {
   negY: { value: vec$negY },
   inX: { value: vec$inX },
   inY: { value: vec$inY },
+  angle: { value: vec$angle },
 });
 
 export function vec(...params) {

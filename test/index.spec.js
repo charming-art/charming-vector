@@ -35,6 +35,22 @@ describe("add", () => {
   });
 });
 
+describe("angle", () => {
+  test("cm.vecAngle(a)", () => {
+    const a = cm.vec(1, 1);
+    expect(cm.vecAngle(a)).toBeCloseTo(Math.PI / 4);
+    expect(a.x).toBe(1);
+    expect(a.y).toBe(1);
+  });
+
+  test("vec.angle()", () => {
+    const a = cm.vec(1, 1);
+    expect(a.angle()).toBeCloseTo(Math.PI / 4);
+    expect(a.x).toBe(1);
+    expect(a.y).toBe(1);
+  });
+});
+
 describe("clamp", () => {
   test("cm.vecClamp(a, max)", () => {
     const a = cm.vec(6, 8);
