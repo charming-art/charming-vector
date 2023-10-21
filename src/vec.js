@@ -10,11 +10,11 @@ import { vec$clamp, vec$clampX, vec$clampY } from "./clamp.js";
 import { vec$random } from "./random.js";
 import { vec$dot } from "./dot.js";
 import { vec$cross } from "./cross.js";
-import { vec$maybe } from "./maybe.js";
 import { vec$out, vec$outX, vec$outY } from "./out.js";
 import { vec$neg, vec$negX, vec$negY } from "./neg.js";
 import { vec$inX, vec$inY } from "./in.js";
 import { vec$angle } from "./angle.js";
+import { vec$clone } from "./clone.js";
 
 export function Vec(x = 0, y = 0) {
   Object.defineProperties(this, {
@@ -41,7 +41,6 @@ Object.defineProperties(Vec.prototype, {
   random: { value: vec$random },
   dot: { value: vec$dot },
   cross: { value: vec$cross },
-  maybe: { value: vec$maybe },
   out: { value: vec$out },
   outX: { value: vec$outX },
   outY: { value: vec$outY },
@@ -52,6 +51,7 @@ Object.defineProperties(Vec.prototype, {
   inX: { value: vec$inX },
   inY: { value: vec$inY },
   angle: { value: vec$angle },
+  clone: { value: vec$clone },
 });
 
 export function vec(...params) {

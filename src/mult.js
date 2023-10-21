@@ -1,5 +1,5 @@
-import { memberize } from "./_memberize";
-import { staticize } from "./_staticize";
+import { memberize } from "./_memberize.js";
+import { staticize } from "./_staticize.js";
 
 function _mult(out, a, s) {
   out.x = a.x * s;
