@@ -1,5 +1,5 @@
-import { memberize } from "./_memberize";
-import { staticize } from "./_staticize";
+import { memberize } from "./_memberize.js";
+import { staticize } from "./_staticize.js";
 
 function _norm(out, a) {
   const mag = a.mag();

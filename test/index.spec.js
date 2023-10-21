@@ -149,6 +149,18 @@ describe("clamp", () => {
   });
 });
 
+describe("clone", () => {
+  test("vec.clone()", () => {
+    const a = cm.vec(3, 4);
+    const b = a.clone();
+    b.set(1, 2);
+    expect(a.x).toBe(3);
+    expect(a.y).toBe(4);
+    expect(b.x).toBe(1);
+    expect(b.y).toBe(2);
+  });
+});
+
 describe("cross", () => {
   test("cm.vecCross(a, b)", () => {
     const a = cm.vec(3, 4);
@@ -374,22 +386,6 @@ describe("mag", () => {
   });
 });
 
-describe("maybe", () => {
-  test("vec.maybe(true, callback)", () => {
-    const a = cm.vec(1, 2);
-    expect(a.maybe(true, (d) => d.mult(2))).toBe(a);
-    expect(a.x).toBe(2);
-    expect(a.y).toBe(4);
-  });
-
-  test("vec.maybe(false, callback)", () => {
-    const a = cm.vec(1, 2);
-    expect(a.maybe(false, (d) => d.mult(2))).toBe(a);
-    expect(a.x).toBe(1);
-    expect(a.y).toBe(2);
-  });
-});
-
 describe("mult", () => {
   test("cm.vecMult(s)", () => {
     const a = cm.vec(3, 4);
@@ -535,7 +531,7 @@ describe("random", () => {
 });
 
 describe("set", () => {
-  test("vec.set(a)", () => {
+  test("vec.set(vec)", () => {
     const a = cm.vec(1, 2);
     const b = cm.vec(3, 4);
     expect(a.set(b)).toBe(a);
@@ -543,6 +539,13 @@ describe("set", () => {
     expect(a.y).toBe(4);
     expect(b.x).toBe(3);
     expect(b.y).toBe(4);
+  });
+
+  test("vec.set(a, b)", () => {
+    const a = cm.vec(1, 2);
+    a.set(3, 4);
+    expect(a.x).toBe(3);
+    expect(a.y).toBe(4);
   });
 
   test("vec.setX(x)", () => {
