@@ -265,6 +265,15 @@ describe("dot", () => {
   });
 });
 
+describe("cm.vecFromAngle", () => {
+  test("cm.vecFromAngle", () => {
+    const theta = Math.PI / 3;
+    const vec = cm.vecFromAngle(theta);
+    expect(vec.x).toBeCloseTo(0.5);
+    expect(vec.y).toBeCloseTo(0.5 * Math.sqrt(3));
+  });
+});
+
 describe("in", () => {
   test("cm.vecInX(a, max)", () => {
     const a = cm.vec(3, 4);
