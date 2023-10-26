@@ -13,3 +13,4 @@ export { vecCross } from "./cross.js";
 export { vecNeg, vecNegX, vecNegY } from "./neg.js";
 export { vecInX, vecInY } from "./in.js";
 export { vecAngle } from "./angle.js";
+export { vecFromAngle } from "./fromAngle.js";
