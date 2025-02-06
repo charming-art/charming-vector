@@ -1,4 +1,4 @@
-import { Vec } from "./vec.js";
+import {Vec} from "./vec.js";
 
 export function vec$set(a, b) {
   if (a instanceof Vec) {

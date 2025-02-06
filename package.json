@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "The JavaScript library for manipulating geometric vector.",
   "author": {
-    "name": "pearmini",
+    "name": "Bairui SU",
     "url": "https://github.com/pearmini"
   },
   "license": "ISC",
@@ -15,10 +15,20 @@
     "src/**/*.js"
   ],
   "scripts": {
-    "test": "vitest"
+    "test": "npm run test:js && npm run test:lint && npm run test:format",
+    "test:js": "vitest",
+    "test:lint": "eslint src test",
+    "test:format": "prettier --check src test",
+    "prepublishOnly": "rm -rf dist && rollup -c"
   },
   "sideEffects": false,
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "eslint": "8",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2",
+    "rollup": "^4.34.4",
     "vitest": "^0.34.2"
   }
 }

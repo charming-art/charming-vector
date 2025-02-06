@@ -1,5 +1,5 @@
-import { memberize } from "./_memberize.js";
-import { staticize } from "./_staticize.js";
+import {memberize} from "./_memberize.js";
+import {staticize} from "./_staticize.js";
 
 function _div(out, a, s) {
   out.x = a.x / s;
