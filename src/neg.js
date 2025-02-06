@@ -1,5 +1,5 @@
-import { memberize } from "./_memberize.js";
-import { staticize } from "./_staticize.js";
+import {memberize} from "./_memberize.js";
+import {staticize} from "./_staticize.js";
 
 export function _neg(out, a) {
   out.x = a.x * -1;

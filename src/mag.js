@@ -1,4 +1,4 @@
-import { Vec } from "./vec.js";
+import {Vec} from "./vec.js";
 
 function _mag(out, s, mag) {
   if (mag !== 0) {

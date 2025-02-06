@@ -1,5 +1,5 @@
-import { memberize } from "./_memberize.js";
-import { staticize } from "./_staticize.js";
+import {memberize} from "./_memberize.js";
+import {staticize} from "./_staticize.js";
 
 function _clamp(out, a, m, m1) {
   const [min, max] = arguments.length === 3 ? [0, m] : [m, m1];
