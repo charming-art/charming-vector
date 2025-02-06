@@ -1,13 +1,13 @@
-# @charming-art/vector
+# Charming Vector
 
-The JavaScript library for manipulating Euclidean vector.
+The JavaScript library for manipulating Euclidean vector, which can be used with [Charming.js](https://charmingjs.org/).
 
 ## Installing
 
 Immutable usage:
 
 ```js
-import * as cm from "@charming-art/vector";
+import * as cm from "charmingjs-vector";
 
 const v1 = cm.vec(1, 2);
 const v2 = cm.vec(2, 3);
