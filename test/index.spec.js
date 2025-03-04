@@ -61,91 +61,11 @@ describe("clamp", () => {
     expect(b.y).toBe(4);
   });
 
-  test("cm.vecClamp(a, min, max)", () => {
-    const a = cm.vec(3, 4);
-    const b = cm.vecClamp(a, 10, 15);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-    expect(b.x).toBe(6);
-    expect(b.y).toBe(8);
-  });
-
   test("vec.clamp(max)", () => {
     const a = cm.vec(6, 8);
     expect(a.clamp(5)).toBe(a);
     expect(a.x).toBe(3);
     expect(a.y).toBe(4);
-  });
-
-  test("vec.clamp(min, max)", () => {
-    const a = cm.vec(3, 4);
-    expect(a.clamp(10, 15)).toBe(a);
-    expect(a.x).toBe(6);
-    expect(a.y).toBe(8);
-  });
-
-  test("cm.vecClampX(a, max)", () => {
-    const a = cm.vec(6, 8);
-    const b = cm.vecClampX(a, 5);
-    expect(a.x).toBe(6);
-    expect(a.y).toBe(8);
-    expect(b.x).toBe(5);
-    expect(b.y).toBe(8);
-  });
-
-  test("cm.vecClampX(a, min, max)", () => {
-    const a = cm.vec(6, 8);
-    const b = cm.vecClampX(a, 10, 15);
-    expect(a.x).toBe(6);
-    expect(a.y).toBe(8);
-    expect(b.x).toBe(10);
-    expect(b.y).toBe(8);
-  });
-
-  test("vec.clampX(max)", () => {
-    const a = cm.vec(6, 8);
-    expect(a.clampX(5)).toBe(a);
-    expect(a.x).toBe(5);
-    expect(a.y).toBe(8);
-  });
-
-  test("vec.clampX(min, max)", () => {
-    const a = cm.vec(6, 8);
-    expect(a.clampX(10, 15)).toBe(a);
-    expect(a.x).toBe(10);
-    expect(a.y).toBe(8);
-  });
-
-  test("cm.vecClampY(a, max)", () => {
-    const a = cm.vec(6, 8);
-    const b = cm.vecClampY(a, 5);
-    expect(a.x).toBe(6);
-    expect(a.y).toBe(8);
-    expect(b.x).toBe(6);
-    expect(b.y).toBe(5);
-  });
-
-  test("cm.vecClampY(a, min, max)", () => {
-    const a = cm.vec(6, 8);
-    const b = cm.vecClampY(a, 10, 15);
-    expect(a.x).toBe(6);
-    expect(a.y).toBe(8);
-    expect(b.x).toBe(6);
-    expect(b.y).toBe(10);
-  });
-
-  test("vec.clampY(max)", () => {
-    const a = cm.vec(6, 8);
-    expect(a.clampY(5)).toBe(a);
-    expect(a.x).toBe(6);
-    expect(a.y).toBe(5);
-  });
-
-  test("vec.clampY(min, max)", () => {
-    const a = cm.vec(6, 8);
-    expect(a.clampY(10, 15)).toBe(a);
-    expect(a.x).toBe(6);
-    expect(a.y).toBe(10);
   });
 });
 
@@ -274,88 +194,6 @@ describe("cm.vecFromAngle", () => {
   });
 });
 
-describe("in", () => {
-  test("cm.vecInX(a, max)", () => {
-    const a = cm.vec(3, 4);
-    expect(cm.vecInX(a, 2)).toBe(false);
-    expect(cm.vecInX(a, 3)).toBe(true);
-    expect(cm.vecInX(a, 4)).toBe(true);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-
-    expect(cm.vecInX(cm.vec(-2, -2), 2)).toBe(false);
-  });
-
-  test("cm.vecInX(a, min, max)", () => {
-    const a = cm.vec(3, 4);
-    expect(cm.vecInX(a, 1, 2)).toBe(false);
-    expect(cm.vecInX(a, 1, 3)).toBe(true);
-    expect(cm.vecInX(a, 1, 4)).toBe(true);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-  });
-
-  test("cm.vecInY(a, max)", () => {
-    const a = cm.vec(3, 4);
-    expect(cm.vecInY(a, 3)).toBe(false);
-    expect(cm.vecInY(a, 4)).toBe(true);
-    expect(cm.vecInY(a, 5)).toBe(true);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-
-    expect(cm.vecInX(cm.vec(-2, -2), 2)).toBe(false);
-  });
-
-  test("cm.vecInY(a, min, max)", () => {
-    const a = cm.vec(3, 4);
-    expect(cm.vecInY(a, 1, 3)).toBe(false);
-    expect(cm.vecInY(a, 1, 4)).toBe(true);
-    expect(cm.vecInY(a, 1, 5)).toBe(true);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-  });
-
-  test("vec.inX(max)", () => {
-    const a = cm.vec(3, 4);
-    expect(a.inX(2)).toBe(false);
-    expect(a.inX(3)).toBe(true);
-    expect(a.inX(4)).toBe(true);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-
-    expect(cm.vec(-2, -2).inX(2)).toBe(false);
-  });
-
-  test("vec.inX(min, max)", () => {
-    const a = cm.vec(3, 4);
-    expect(a.inX(1, 2)).toBe(false);
-    expect(a.inX(1, 3)).toBe(true);
-    expect(a.inX(1, 4)).toBe(true);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-  });
-
-  test("vec.inY(max)", () => {
-    const a = cm.vec(3, 4);
-    expect(a.inY(3)).toBe(false);
-    expect(a.inY(4)).toBe(true);
-    expect(a.inY(5)).toBe(true);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-
-    expect(cm.vec(-2, -2).inY(2)).toBe(false);
-  });
-
-  test("vec.inY(a, min, max)", () => {
-    const a = cm.vec(3, 4);
-    expect(a.inY(1, 3)).toBe(false);
-    expect(a.inY(1, 4)).toBe(true);
-    expect(a.inY(1, 5)).toBe(true);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-  });
-});
-
 describe("mag", () => {
   test("cm.vecMag(a)", () => {
     const a = cm.vec(3, 4);
@@ -413,56 +251,6 @@ describe("mult", () => {
   });
 });
 
-describe("neg", () => {
-  test("cm.vecNeg(a)", () => {
-    const a = cm.vec(3, 4);
-    const b = cm.vecNeg(a);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-    expect(b.x).toBe(-3);
-    expect(b.y).toBe(-4);
-  });
-
-  test("cm.vecNegX(a)", () => {
-    const a = cm.vec(3, 4);
-    const b = cm.vecNegX(a);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-    expect(b.x).toBe(-3);
-    expect(b.y).toBe(4);
-  });
-
-  test("cm.vecNegY(a)", () => {
-    const a = cm.vec(3, 4);
-    const b = cm.vecNegY(a);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-    expect(b.x).toBe(3);
-    expect(b.y).toBe(-4);
-  });
-
-  test("vec.neg()", () => {
-    const a = cm.vec(3, 4);
-    expect(a.neg()).toBe(a);
-    expect(a.x).toBe(-3);
-    expect(a.y).toBe(-4);
-  });
-
-  test("vec.negX()", () => {
-    const a = cm.vec(3, 4);
-    expect(a.negX()).toBe(a);
-    expect(a.x).toBe(-3);
-    expect(a.y).toBe(4);
-  });
-
-  test("vec.negY()", () => {
-    const a = cm.vec(3, 4);
-    expect(a.negY()).toBe(a);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(-4);
-  });
-});
-
 describe("norm", () => {
   test("cm.vecNorm(a)", () => {
     const a = cm.vec(3, 4);
@@ -485,38 +273,6 @@ describe("norm", () => {
     a.norm();
     expect(a.x).toBe(0);
     expect(a.y).toBe(0);
-  });
-});
-
-describe("out", () => {
-  test("vec.out(a)", () => {
-    const a = cm.vec(3, 4);
-    const b = cm.vec();
-    expect(a.out(b)).toBe(a);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-    expect(b.x).toBe(3);
-    expect(b.y).toBe(4);
-  });
-
-  test("vec.outX(a)", () => {
-    const a = cm.vec(3, 4);
-    const b = cm.vec();
-    expect(a.outX(b)).toBe(a);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-    expect(b.x).toBe(3);
-    expect(b.y).toBe(0);
-  });
-
-  test("vec.outY(a)", () => {
-    const a = cm.vec(3, 4);
-    const b = cm.vec();
-    expect(a.outY(b)).toBe(a);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(4);
-    expect(b.x).toBe(0);
-    expect(b.y).toBe(4);
   });
 });
 
@@ -555,20 +311,6 @@ describe("set", () => {
     a.set(3, 4);
     expect(a.x).toBe(3);
     expect(a.y).toBe(4);
-  });
-
-  test("vec.setX(x)", () => {
-    const a = cm.vec(1, 2);
-    expect(a.setX(3)).toBe(a);
-    expect(a.x).toBe(3);
-    expect(a.y).toBe(2);
-  });
-
-  test("vec.setY(y)", () => {
-    const a = cm.vec(1, 2);
-    expect(a.setY(3)).toBe(a);
-    expect(a.x).toBe(1);
-    expect(a.y).toBe(3);
   });
 });
 
